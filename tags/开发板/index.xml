@@ -1,0 +1,71 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>开发板 - 标签 - Inuyasha&#39;s blog</title>
+    <link>https://blog.inuya.ltd/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/</link>
+    <description>开发板 - 标签 - Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Thu, 10 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/" rel="self" type="application/rss+xml" /><item>
+  <title>香橙派zero3</title>
+  <link>https://blog.inuya.ltd/posts/orangepi/</link>
+  <pubDate>Thu, 10 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/orangepi/</guid>
+  <description><![CDATA[<h2 id="基础配置">基础配置</h2>
+<table>
+<thead>
+<tr>
+<th>CPU</th>
+<th>全志H618高性能四核Cortex-A53处理器 1.5GHz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU</td>
+<td>Mali G31 MP2</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>1GB/1.5GB/2GB/4GB LPDDR4</td>
+</tr>
+<tr>
+<td>储存</td>
+<td>16MB SPI Flash</td>
+</tr>
+<tr>
+<td>板载WiFi+蓝牙</td>
+<td>WiFi5和蓝牙5.0</td>
+</tr>
+<tr>
+<td>网络</td>
+<td>10M/100M/1000M以太网接口</td>
+</tr>
+<tr>
+<td>音频输入、输出</td>
+<td>13Pin扩展端口支持2路输出1路输入</td>
+</tr>
+<tr>
+<td>视频输出</td>
+<td>Micro HDMI支持4K@60fps</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>USB 2.0 x 3（需搭配扩展版）</td>
+</tr>
+<tr>
+<td>SD卡接口</td>
+<td>Micro SD</td>
+</tr>
+<tr>
+<td>电源输入</td>
+<td>5V3A，Type-c接口</td>
+</tr>
+<tr>
+<td>拓展接口</td>
+<td>26Pin GPIO接口 &amp;&amp; 13Pin GPIO接口</td>
+</tr>
+</tbody>
+</table>
+<p>因为原本买它是用来搭建mc服务器的，所以ram选择4g版</p>]]></description>
+</item>
+</channel>
+</rss>

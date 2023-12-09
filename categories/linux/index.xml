@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Linux - 分类 - Inuyasha&#39;s blog</title>
+    <link>https://blog.inuya.ltd/categories/linux/</link>
+    <description>Linux - 分类 - Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sat, 19 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/linux/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux下的各种shell</title>
+  <link>https://blog.inuya.ltd/posts/shell/</link>
+  <pubDate>Sat, 19 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/shell/</guid>
+  <description><![CDATA[<p>安装完linux要干什么？ 当然是美化一下终端啦</p>
+<h2 id="fish">FIsh</h2>
+<blockquote>
+<p>fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.</p>
+</blockquote>
+<p>我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用</p>]]></description>
+</item>
+</channel>
+</rss>

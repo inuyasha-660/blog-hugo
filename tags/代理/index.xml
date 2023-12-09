@@ -1,0 +1,36 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>代理 - 标签 - Inuyasha&#39;s blog</title>
+    <link>https://blog.inuya.ltd/tags/%E4%BB%A3%E7%90%86/</link>
+    <description>代理 - 标签 - Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/%E4%BB%A3%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+  <title>Clash-For-Linux</title>
+  <link>https://blog.inuya.ltd/posts/clash/</link>
+  <pubDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/clash/</guid>
+  <description><![CDATA[<p>clash仓库已删除，如没有备份的可以在我的<a href="https://dl.inuya.ltd/d/%E9%98%BF%E9%87%8C%E4%BA%91/Linux/clash.tar.bz2"target="_blank" rel="external nofollow noopener noreferrer">alist上下载</a></p>
+<h2 id="下载clash">下载clash</h2>
+<p>从Github下载<a href="https://github.com/DustinWin/clash-tools/tree/main/ClashPremium-release"target="_blank" rel="external nofollow noopener noreferrer">clash</a></p>
+<p>因为最新的c17没有arm64的版本，所以选用c16，下载好gz包，用以下命令解压</p>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gunzip clash-linux-arm64-vxxx.gz</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建文件夹">创建文件夹</h3>
+<p>为clash创建一个文件夹</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p clash</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+</channel>
+</rss>

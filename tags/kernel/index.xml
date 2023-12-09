@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Kernel - 标签 - Inuyasha&#39;s blog</title>
+    <link>https://blog.inuya.ltd/tags/kernel/</link>
+    <description>Kernel - 标签 - Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sat, 05 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/kernel/" rel="self" type="application/rss+xml" /><item>
+  <title>KernelSU内核编译</title>
+  <link>https://blog.inuya.ltd/posts/kernelsu/</link>
+  <pubDate>Sat, 05 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/kernelsu/</guid>
+  <description><![CDATA[<h2 id="环境搭建">环境搭建</h2>
+<p>搭建编译所需的环境</p>
+<h3 id="系统安装">系统安装</h3>
+<p>教程基于ubuntu，你可以选择实机安装或者使用wsl2,如何安装请看<a href="https://learn.microsoft.com/zh-cn/windows/wsl/install"target="_blank" rel="external nofollow noopener noreferrer">使用 WSL 在 Windows 上安装 Linux</a></p>
+<blockquote>
+<p>注：wsl下的文件传输需将文件移动到挂载点<code>/mnt/c</code></p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>
