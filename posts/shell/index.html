@@ -238,7 +238,7 @@ fish is a smart and user-friendly command line shell for Linux, macOS, and the r
       <ul>
         <li><a href="#安装">安装</a></li>
         <li><a href="#主题">主题</a></li>
-        <li><a href="#缩写">缩写</a></li>
+        <li><a href="#别名">别名</a></li>
       </ul>
     </li>
     <li><a href="#zsh">Zsh</a>
@@ -246,7 +246,7 @@ fish is a smart and user-friendly command line shell for Linux, macOS, and the r
         <li><a href="#安装-1">安装</a></li>
         <li><a href="#主题-1">主题</a></li>
         <li><a href="#插件">插件</a></li>
-        <li><a href="#缩写-1">缩写</a></li>
+        <li><a href="#别名-1">别名</a></li>
       </ul>
     </li>
     <li><a href="#bash">Bash</a>
@@ -320,8 +320,8 @@ fish is a smart and user-friendly command line shell for Linux, macOS, and the r
 </span></span><span class="line"><span class="cl">omf update <span class="c1">#更新</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>如需安装更多主题请看<a href="https://xiao_beita.gitee.io/009_fish_omf/"target="_blank" rel="external nofollow noopener noreferrer">小贝塔</a>，里面把所有的主题样式都展示出来</p>
-<h3 id="缩写" class="heading-element">
-  <a href="#%e7%bc%a9%e5%86%99" class="heading-mark"></a>缩写</h3><p>fish自带了<code>la</code>也就是<code>ls -A</code>的缩写，能更方便我们查看</p>
+<h3 id="别名" class="heading-element">
+  <a href="#%e5%88%ab%e5%90%8d" class="heading-mark"></a>别名</h3><p>fish自带了<code>la</code>也就是<code>ls -A</code>的别名，能更方便我们查看</p>
 <h2 id="zsh" class="heading-element">
   <a href="#zsh" class="heading-mark"></a>Zsh</h2><blockquote>
 <p>Zsh is a shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of bash, ksh, and tcsh were incorporated into zsh; many original features were added.</p>
@@ -412,8 +412,8 @@ fish is a smart and user-friendly command line shell for Linux, macOS, and the r
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh</span></span></code></pre></td></tr></table>
 </div>
 </div><p>多重启几次终端，查看是否开启自动补全，如果重启没有自动补全，则需要检查上面的<code>echo</code>命令的路径是否是你插件的位置</p>
-<h3 id="缩写-1" class="heading-element">
-  <a href="#%e7%bc%a9%e5%86%99-1" class="heading-mark"></a>缩写</h3><p>zsh默认是没有带任何缩写的，我们要去<code>.zshrc</code>中自行配置，zsh的配置文件在<code>/home/username/.zshrc</code></p>
+<h3 id="别名-1" class="heading-element">
+  <a href="#%e5%88%ab%e5%90%8d-1" class="heading-mark"></a>别名</h3><p>zsh默认是没有带任何别名的，我们要去<code>.zshrc</code>中自行配置，zsh的配置文件在<code>/home/username/.zshrc</code></p>
 <div class="highlight" id="id-11"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -425,7 +425,7 @@ fish is a smart and user-friendly command line shell for Linux, macOS, and the r
 </span></span><span class="line"><span class="cl">alias ll=&#39;ls -alF&#39;
 </span></span><span class="line"><span class="cl">alias l=&#39;ls -CF&#39;</span></span></code></pre></td></tr></table>
 </div>
-</div><p>即可设置缩写，也可以仿照上面的格式自定义</p>
+</div><p>即可设置别名，也可以仿照上面的格式自定义</p>
 <h2 id="bash" class="heading-element">
   <a href="#bash" class="heading-mark"></a>Bash</h2><blockquote>
 <p>This is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and the C shell (csh)</p>
