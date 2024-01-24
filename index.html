@@ -192,6 +192,20 @@
     </a><a href="mailto:inuya@foxmail.com" title="Email" rel=" me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/nat-traversal/">Frp自建内网穿透</a>
+  </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2024-01-22 00:00:00'>发布于 <time datetime="2024-01-22">2024-01-22</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/linux/" class="post-category" title="分类 - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a>&ensp;<a href="/categories/%E5%9B%BE%E5%BA%8A/" class="post-category" title="分类 - 图床"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 图床</a></span></div><div class="content">这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
+想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
+frp提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
+网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
+安装&amp;使用frp的安装很简单，参照文档的教程
+到Releases处下载适合的架构/系统的压缩包，解压到任意目录
+使用./frps -c ./frps.toml启动服务端
+使用./frpc -c ./frpc.toml启动客户端
+使用 systemd 开机自启动如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
+(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令
+1 2 3 4 5 6 7 8 9 10 # 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可</div><div class="post-footer">
+    <a href="/posts/nat-traversal/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a><a href='/tags/%E5%9B%BE%E5%BA%8A/' class="post-tag">图床</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/arch-kde/">Arch下的Kde配置</a>
   </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2024-01-14 00:00:00'>发布于 <time datetime="2024-01-14">2024-01-14</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/linux/" class="post-category" title="分类 - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="content">2024年的第一篇文章，祝大家新年快乐(虽然有点迟了)
 这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
@@ -249,23 +263,6 @@ ssl证书阿里云现有免费的一年ssl证书可以申请
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/next/">Next主题进阶配置</a>
   </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2023-09-17 00:00:00'>发布于 <time datetime="2023-09-17">2023-09-17</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/hexo/" class="post-category" title="分类 - hexo"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> hexo</a></span></div><div class="content"><p>最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录</p></div><div class="post-footer">
     <a href="/posts/next/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/hexo/' class="post-tag">hexo</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/ipv6/">家庭网络优化</a>
-  </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2023-08-23 00:00:00'>发布于 <time datetime="2023-08-23">2023-08-23</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/" class="post-category" title="分类 - 开发板"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 开发板</a></span></div><div class="content"><h2 id="开启ipv6" class="heading-element">
-  <a href="#%e5%bc%80%e5%90%afipv6" class="heading-mark"></a>开启IPV6</h2><p>上一篇文章用开发板搭建了alist，mc服务器，但没有公网ip，只能局域网下访问，我当然不能忍，这篇文章讲述我如何获取公网ipv6和踩的一些坑</p>
-<h3 id="光猫配置" class="heading-element">
-  <a href="#%e5%85%89%e7%8c%ab%e9%85%8d%e7%bd%ae" class="heading-mark"></a>光猫配置</h3><p>首先进入光猫的后台，我的猫是华为的老东西了，用普通的账号<code>root</code>密码<code>admin</code>进是能进去，但是很多设置只能看，改不了，于是我查遍bing，终于找到了适合我的超级管理员密码，大家可以试试</p>
-<div class="highlight" id="id-1"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">账号:telecomadmin
-</span></span><span class="line"><span class="cl">密码:admintelecom</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输入密码进入后台，找到<code>wan</code>设置，把路由器的wan改为<code>桥接</code>，并把<strong>ipv4</strong>改为<code>ipv4/ipv6</code>如果是灰色的不能更改，请按下面的步骤设置，以chrome为例</p></div><div class="post-footer">
-    <a href="/posts/ipv6/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/ipv6/' class="post-tag">ipv6</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item active">
           <span class="page-link">

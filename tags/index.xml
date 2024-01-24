@@ -4,20 +4,28 @@
     <link>https://blog.inuya.ltd/tags/</link>
     <description>Tags - 标签 | Inuyasha&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
-      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux</title>
+  <link>https://blog.inuya.ltd/tags/linux/</link>
+  <pubDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/tags/linux/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>图床</title>
+  <link>https://blog.inuya.ltd/tags/%E5%9B%BE%E5%BA%8A/</link>
+  <pubDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/tags/%E5%9B%BE%E5%BA%8A/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Kernel</title>
   <link>https://blog.inuya.ltd/tags/kernel/</link>
   <pubDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
   <guid>https://blog.inuya.ltd/tags/kernel/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Linux</title>
-  <link>https://blog.inuya.ltd/tags/linux/</link>
-  <pubDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</pubDate>
-  <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/tags/linux/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
@@ -42,14 +50,6 @@
   <pubDate>Sun, 05 Nov 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
   <guid>https://blog.inuya.ltd/tags/hugo/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>图床</title>
-  <link>https://blog.inuya.ltd/tags/%E5%9B%BE%E5%BA%8A/</link>
-  <pubDate>Mon, 16 Oct 2023 00:00:00 &#43;0000</pubDate>
-  <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/tags/%E5%9B%BE%E5%BA%8A/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
