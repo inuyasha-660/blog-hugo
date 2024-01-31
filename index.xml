@@ -4,9 +4,37 @@
     <link>https://blog.inuya.ltd/</link>
     <description>Inuyasha&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
-      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</lastBuildDate>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Wed, 31 Jan 2024 00:00:00 &#43;0000</lastBuildDate>
       <atom:link href="https://blog.inuya.ltd/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Pigo实现控头大师</title>
+  <link>https://blog.inuya.ltd/posts/pigo-face/</link>
+  <pubDate>Wed, 31 Jan 2024 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/pigo-face/</guid>
+  <description><![CDATA[最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版
+使用从Releases处下载对应系统的二进制
+1 ./pigo -in input.png -out out.png &lt; input/source.jpg -cf=/path/to/cascade 即可识别input.png，并输出output.png
+用控头大师来试下
+控头大师 可以看到准确率还是不错的
+识别视频因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的
+下载视频B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能
+到手机/storage/emulated/0/Android/data/com.bilibili.app.in/download/目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个.xml,.json结尾的文件
+进入数字文件夹，需要的两个文件出现了，audio.m4s为音频文件，video.m4s为视频文件，将音频拓展名重命名为*.mp3，视频为*.mp4，移动到任意剪辑软件能读取的目录
+将两个文件导入剪辑软件，将视频和音频同步拖到对应轨道，导出即可
+切割视频这里博主使用的工具是FFmpeg
+最好创建一个专门的文件夹存放输出的图片
+A complete, cross-platform solution to record, convert and stream audio and video.
+使用ffmpeg -i lockHand.mp4 -r 24 ./lockHand/output%d.png 以每秒24张图片分解视频
+-i: 指定分割的视频
+-r: 设置帧率，默认为25
+output%d.png中%d是占位符，ffmpeg将以1.2.3&hellip;的顺序命名输出文件
+完成后，到lockHand目录下即可看到输出的图片
+批量识别一个18秒，24帧的视频就需要432张图片，这么多图片难不成要我们手动一张张识别？估计得识别到地球爆炸;像我这么懒的人肯定不会这么做，我决定用一个脚本来替我完成这项艰巨的任务
+1 2 3 4 5 6 7 #!/bin/bash for((i=1;i&lt;=422;i++)); do ./pigo -in ./lockHand/output$i.png -out ./outHand/out$i.png -cf ./facefinder echo &#34;处理次数:&#34;$i done 很简单的脚本，其中442为生成的源图片数量，./lockHand/output$i.png需要改为源图片文件文件夹，$i和%d差不多，产出目录同上
+等待脚本完成，到./lockHand即可看到产出图片]]></description>
+</item>
+<item>
   <title>Frp自建内网穿透</title>
   <link>https://blog.inuya.ltd/posts/nat-traversal/</link>
   <pubDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</pubDate>
@@ -151,34 +179,6 @@ ssl证书阿里云现有免费的一年ssl证书可以申请
 <blockquote>
 <p>Fluid 是基于 Hexo 的一款 Material Design 风格的主题</p>
 </blockquote>]]></description>
-</item>
-<item>
-  <title>Clash-For-Linux</title>
-  <link>https://blog.inuya.ltd/posts/clash/</link>
-  <pubDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</pubDate>
-  <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/clash/</guid>
-  <description><![CDATA[<p>clash仓库已删除，如没有备份的可以在我的<a href="https://dl.inuya.ltd/d/%E9%98%BF%E9%87%8C%E4%BA%91/Linux/clash.tar.bz2"target="_blank" rel="external nofollow noopener noreferrer">alist上下载</a></p>
-<h2 id="下载clash" class="heading-element">
-  <a href="#%e4%b8%8b%e8%bd%bdclash" class="heading-mark"></a>下载clash</h2><p>从Github下载<a href="https://github.com/DustinWin/clash-tools/tree/main/ClashPremium-release"target="_blank" rel="external nofollow noopener noreferrer">clash</a></p>
-<p>因为最新的c17没有arm64的版本，所以选用c16，下载好gz包，用以下命令解压</p>
-<div class="highlight" id="id-1"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gunzip clash-linux-arm64-vxxx.gz</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="创建文件夹" class="heading-element">
-  <a href="#%e5%88%9b%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9" class="heading-mark"></a>创建文件夹</h3><p>为clash创建一个文件夹</p>
-<div class="highlight" id="id-2"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p clash</span></span></code></pre></td></tr></table>
-</div>
-</div>]]></description>
 </item>
 </channel>
 </rss>

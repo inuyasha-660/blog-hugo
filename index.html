@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
   <head>
-	<meta name="generator" content="Hugo 0.121.2">
+	<meta name="generator" content="Hugo 0.122.0">
     
       <meta name="theme" content='FixIt v0.3.1'>
     
@@ -192,6 +192,30 @@
     </a><a href="mailto:inuya@foxmail.com" title="Email" rel=" me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/pigo-face/">Pigo实现控头大师</a>
+  </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2024-01-31 00:00:00'>发布于 <time datetime="2024-01-31">2024-01-31</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/go/" class="post-category" title="分类 - Go"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Go</a></span></div><div class="content">最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版
+使用从Releases处下载对应系统的二进制
+1 ./pigo -in input.png -out out.png &lt; input/source.jpg -cf=/path/to/cascade 即可识别input.png，并输出output.png
+用控头大师来试下
+控头大师 可以看到准确率还是不错的
+识别视频因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的
+下载视频B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能
+到手机/storage/emulated/0/Android/data/com.bilibili.app.in/download/目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个.xml,.json结尾的文件
+进入数字文件夹，需要的两个文件出现了，audio.m4s为音频文件，video.m4s为视频文件，将音频拓展名重命名为*.mp3，视频为*.mp4，移动到任意剪辑软件能读取的目录
+将两个文件导入剪辑软件，将视频和音频同步拖到对应轨道，导出即可
+切割视频这里博主使用的工具是FFmpeg
+最好创建一个专门的文件夹存放输出的图片
+A complete, cross-platform solution to record, convert and stream audio and video.
+使用ffmpeg -i lockHand.mp4 -r 24 ./lockHand/output%d.png 以每秒24张图片分解视频
+-i: 指定分割的视频
+-r: 设置帧率，默认为25
+output%d.png中%d是占位符，ffmpeg将以1.2.3&hellip;的顺序命名输出文件
+完成后，到lockHand目录下即可看到输出的图片
+批量识别一个18秒，24帧的视频就需要432张图片，这么多图片难不成要我们手动一张张识别？估计得识别到地球爆炸;像我这么懒的人肯定不会这么做，我决定用一个脚本来替我完成这项艰巨的任务
+1 2 3 4 5 6 7 #!/bin/bash for((i=1;i&lt;=422;i++)); do ./pigo -in ./lockHand/output$i.png -out ./outHand/out$i.png -cf ./facefinder echo &#34;处理次数:&#34;$i done 很简单的脚本，其中442为生成的源图片数量，./lockHand/output$i.png需要改为源图片文件文件夹，$i和%d差不多，产出目录同上
+等待脚本完成，到./lockHand即可看到产出图片</div><div class="post-footer">
+    <a href="/posts/pigo-face/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a><a href='/tags/go/' class="post-tag">Go</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/nat-traversal/">Frp自建内网穿透</a>
   </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2024-01-22 00:00:00'>发布于 <time datetime="2024-01-22">2024-01-22</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/linux/" class="post-category" title="分类 - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a>&ensp;<a href="/categories/%E5%9B%BE%E5%BA%8A/" class="post-category" title="分类 - 图床"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 图床</a></span></div><div class="content">这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
 想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
@@ -260,10 +284,6 @@ ssl证书阿里云现有免费的一年ssl证书可以申请
 <p>于是我<del>又</del>换主题了，这次是有6K star的Icarus主题，整体看着也很不错，也没什么图片需要加载的</p></div><div class="post-footer">
     <a href="/posts/upyun/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E5%9B%BE%E5%BA%8A/' class="post-tag">图床</a><a href='/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/' class="post-tag">又拍云</a></div></div>
 </article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/next/">Next主题进阶配置</a>
-  </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2023-09-17 00:00:00'>发布于 <time datetime="2023-09-17">2023-09-17</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/hexo/" class="post-category" title="分类 - hexo"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> hexo</a></span></div><div class="content"><p>最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录</p></div><div class="post-footer">
-    <a href="/posts/next/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/hexo/' class="post-tag">hexo</a></div></div>
-</article>
 <ul class="pagination"><li class="page-item active">
           <span class="page-link">
             <a href="/">1</a>
@@ -277,7 +297,7 @@ ssl证书阿里云现有免费的一年ssl证书可以申请
             <a href="/page/3/">3</a>
           </span>
         </li></ul></div></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1">FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.122.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1">FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://blog.inuya.ltd"target="_blank" rel="external nofollow noopener noreferrer">Inuyasha</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://icp.gov.moe/?keyword=20230439" target="_blank">萌ICP备20230439号</a></span></div><div class="footer-line visitor">

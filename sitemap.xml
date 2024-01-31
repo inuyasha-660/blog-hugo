@@ -2,13 +2,16 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://blog.inuya.ltd/categories/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/categories/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/tags/go/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/categories/go/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/tags/linux/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/posts/pigo-face/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/posts/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://blog.inuya.ltd/tags/</loc><lastmod>2024-01-31T00:00:00&#43;00:00</lastmod></url><url>
       <loc>https://blog.inuya.ltd/posts/nat-traversal/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
-      <loc>https://blog.inuya.ltd/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
-      <loc>https://blog.inuya.ltd/tags/linux/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
       <loc>https://blog.inuya.ltd/categories/linux/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
-      <loc>https://blog.inuya.ltd/posts/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
-      <loc>https://blog.inuya.ltd/tags/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
       <loc>https://blog.inuya.ltd/tags/%E5%9B%BE%E5%BA%8A/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
       <loc>https://blog.inuya.ltd/categories/%E5%9B%BE%E5%BA%8A/</loc><lastmod>2024-01-22T00:00:00&#43;00:00</lastmod></url><url>
       <loc>https://blog.inuya.ltd/posts/arch-kde/</loc><lastmod>2024-01-14T00:00:00&#43;00:00</lastmod></url><url>
