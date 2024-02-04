@@ -195,9 +195,9 @@
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/pigo-face/">Pigo实现控头大师</a>
   </h2><div class="post-meta"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span>&nbsp;<span class="post-publish" title='2024-01-31 00:00:00'>发布于 <time datetime="2024-01-31">2024-01-31</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/go/" class="post-category" title="分类 - Go"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Go</a></span></div><div class="content">最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版
 使用从Releases处下载对应系统的二进制
+下载facefinder
 1 ./pigo -in input.png -out out.png &lt; input/source.jpg -cf=/path/to/cascade 即可识别input.png，并输出output.png
-用控头大师来试下
-控头大师 可以看到准确率还是不错的
+官方演示图 可以看到准确率还是不错的
 识别视频因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的
 下载视频B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能
 到手机/storage/emulated/0/Android/data/com.bilibili.app.in/download/目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个.xml,.json结尾的文件
