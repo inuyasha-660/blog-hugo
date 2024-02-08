@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Fri, 17 Nov 2023 18:48:10 &#43;0800</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/%E6%97%A5%E5%B8%B8/" rel="self" type="application/rss+xml" /><item>
   <title>将你的博客部署到雨云</title>
-  <link>https://blog.inuya.ltd/posts/winter/</link>
+  <link>https://blog.inuya.ltd/posts/blog/winter/</link>
   <pubDate>Fri, 17 Nov 2023 18:48:10 &#43;0800</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/winter/</guid>
+  <guid>https://blog.inuya.ltd/posts/blog/winter/</guid>
   <description><![CDATA[近况期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了
 这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天
 看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到

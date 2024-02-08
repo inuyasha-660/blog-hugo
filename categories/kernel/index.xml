@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sat, 05 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/kernel/" rel="self" type="application/rss+xml" /><item>
   <title>KernelSU内核编译</title>
-  <link>https://blog.inuya.ltd/posts/kernelsu/</link>
+  <link>https://blog.inuya.ltd/posts/linux/kernelsu/</link>
   <pubDate>Sat, 05 Aug 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/kernelsu/</guid>
+  <guid>https://blog.inuya.ltd/posts/linux/kernelsu/</guid>
   <description><![CDATA[<h2 id="环境搭建" class="heading-element">
   <a href="#%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba" class="heading-mark"></a>环境搭建</h2><p>搭建编译所需的环境</p>
 <h3 id="系统安装" class="heading-element">

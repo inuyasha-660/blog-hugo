@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Wed, 31 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/go/" rel="self" type="application/rss+xml" /><item>
   <title>Pigo实现控头大师</title>
-  <link>https://blog.inuya.ltd/posts/pigo-face/</link>
+  <link>https://blog.inuya.ltd/posts/go/pigo-face/</link>
   <pubDate>Wed, 31 Jan 2024 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/pigo-face/</guid>
+  <guid>https://blog.inuya.ltd/posts/go/pigo-face/</guid>
   <description><![CDATA[最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版
 使用从Releases处下载对应系统的二进制
 下载facefinder

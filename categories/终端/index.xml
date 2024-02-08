@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sat, 05 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/%E7%BB%88%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
   <title>手机终端termux</title>
-  <link>https://blog.inuya.ltd/posts/termux/</link>
+  <link>https://blog.inuya.ltd/posts/linux/termux/</link>
   <pubDate>Sat, 05 Aug 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/termux/</guid>
+  <guid>https://blog.inuya.ltd/posts/linux/termux/</guid>
   <description><![CDATA[<h2 id="介绍" class="heading-element">
   <a href="#%e4%bb%8b%e7%bb%8d" class="heading-mark"></a>介绍</h2><blockquote>
 <p>Termux 是一款Android 终端模拟器和 Linux 环境应用程序，无需 root 或设置即可直接运行。自动安装最小的基本系统 - 使用 APT 包管理器可以使用其他包。</p>

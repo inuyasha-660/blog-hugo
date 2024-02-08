@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/" rel="self" type="application/rss+xml" /><item>
   <title>家庭网络优化</title>
-  <link>https://blog.inuya.ltd/posts/ipv6/</link>
+  <link>https://blog.inuya.ltd/posts/net/ipv6/</link>
   <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/ipv6/</guid>
+  <guid>https://blog.inuya.ltd/posts/net/ipv6/</guid>
   <description><![CDATA[<h2 id="开启ipv6" class="heading-element">
   <a href="#%e5%bc%80%e5%90%afipv6" class="heading-mark"></a>开启IPV6</h2><p>上一篇文章用开发板搭建了alist，mc服务器，但没有公网ip，只能局域网下访问，我当然不能忍，这篇文章讲述我如何获取公网ipv6和踩的一些坑</p>
 <h3 id="光猫配置" class="heading-element">
@@ -27,10 +27,10 @@
 </item>
 <item>
   <title>香橙派zero3</title>
-  <link>https://blog.inuya.ltd/posts/orangepi/</link>
+  <link>https://blog.inuya.ltd/posts/orangepi/orangepi/</link>
   <pubDate>Thu, 10 Aug 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/orangepi/</guid>
+  <guid>https://blog.inuya.ltd/posts/orangepi/orangepi/</guid>
   <description><![CDATA[<h2 id="基础配置" class="heading-element">
   <a href="#%e5%9f%ba%e7%a1%80%e9%85%8d%e7%bd%ae" class="heading-mark"></a>基础配置</h2><table>
 <thead>
