@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sun, 05 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/hugo/" rel="self" type="application/rss+xml" /><item>
   <title>博客迁移至hugo</title>
-  <link>https://blog.inuya.ltd/posts/blog/hugo/</link>
+  <link>https://blog.inuya.ltd/posts/hugo/</link>
   <pubDate>Sun, 05 Nov 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/blog/hugo/</guid>
+  <guid>https://blog.inuya.ltd/posts/hugo/</guid>
   <description><![CDATA[前几天，因为一个主题，我把博客从hexo换成hugo，也就是现在看到的
 迁移hugo的操作比hexo要难，热门程度也不及hexo，所以遇到一些问题需要自己解决
 安装 用sudo apt install git安装git 到All releases找到Linux下载go 用以下命令提取下载的archive 1 rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz 编辑/etc/profile(系统范围安装)，添加环境变量 1 export PATH=$PATH:/usr/local/go/bin 完成后使用source /etc/profile即可完成安装

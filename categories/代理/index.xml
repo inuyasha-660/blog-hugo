@@ -6,10 +6,10 @@
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
       <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/%E4%BB%A3%E7%90%86/" rel="self" type="application/rss+xml" /><item>
   <title>Clash-For-Linux</title>
-  <link>https://blog.inuya.ltd/posts/net/clash/</link>
+  <link>https://blog.inuya.ltd/posts/clash/</link>
   <pubDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</pubDate>
   <author>Inuyasha</author>
-  <guid>https://blog.inuya.ltd/posts/net/clash/</guid>
+  <guid>https://blog.inuya.ltd/posts/clash/</guid>
   <description><![CDATA[<p>clash仓库已删除，如没有备份的可以在我的<a href="https://dl.inuya.ltd/d/%E9%98%BF%E9%87%8C%E4%BA%91/Linux/clash.tar.bz2"target="_blank" rel="external nofollow noopener noreferrer">alist上下载</a></p>
 <h2 id="下载clash" class="heading-element">
   <a href="#%e4%b8%8b%e8%bd%bdclash" class="heading-mark"></a>下载clash</h2><p>从Github下载<a href="https://github.com/DustinWin/clash-tools/tree/main/ClashPremium-release"target="_blank" rel="external nofollow noopener noreferrer">clash</a></p>
