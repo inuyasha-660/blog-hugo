@@ -309,7 +309,7 @@
 <h4 id="icp备案" class="heading-element">
   <a href="#icp%e5%a4%87%e6%a1%88" class="heading-mark"></a>ICP备案</h4><p>Icarus默认是没有ICP备案填写的配置的，我们可以仿照添加一个ICP</p>
 <p>同样的文件，添加上</p>
-<div class="highlight" id="id-2"><div class="chroma">
+<div class="highlight" id="id-1"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -329,7 +329,7 @@
 <p>原本想看下又没有好的解决方案，但找到的都没用，最后只能自己折腾一个了。</p>
 <p>想要<a href="https://www.imaegoo.com/friends/"target="_blank" rel="external nofollow noopener noreferrer">imaegoo</a>大佬的友链页</p>
 <p>在<code>source/link/index.md</code>填入以下内容生成一组(两个)友链</p>
-<div class="highlight" id="id-3"><div class="chroma">
+<div class="highlight" id="id-2"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -374,7 +374,7 @@
 <p>作者这里写了两个，一行就显示两个友链，手机等屏幕较小的就显示一个</p>
 <h4 id="简介超出字数省略" class="heading-element">
   <a href="#%e7%ae%80%e4%bb%8b%e8%b6%85%e5%87%ba%e5%ad%97%e6%95%b0%e7%9c%81%e7%95%a5" class="heading-mark"></a>简介超出字数省略</h4><p>如果你的友链简介过长，就会出现一个友链占用过多空间导致布局不美观；在书写友链前添加以下css即可解决</p>
-<div class="highlight" id="id-4"><div class="chroma">
+<div class="highlight" id="id-3"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -399,7 +399,7 @@
 <p>还是同样的<code>~/hexo/themes/icarus/layout/common</code>目录，找到<strong>comment.jsx</strong></p>
 <p>在<code>&lt;h3 class=&quot;title is-5&quot;&gt;{__('article.comments')}&lt;/h3&gt;</code></p>
 <p>和<code>{(() =&gt; {</code>中填入Giscus生成的代码</p>
-<div class="highlight" id="id-5"><div class="chroma">
+<div class="highlight" id="id-4"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -510,7 +510,7 @@
 <li>找到设置/应用凭证，复制你的<code>AppID</code>和<code>AppKey</code></li>
 <li>转到主题配置文件<code>_config.icarus.yml</code>，在comment写入以下内容</li>
 </ol>
-<div class="highlight" id="id-6"><div class="chroma">
+<div class="highlight" id="id-5"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -555,7 +555,7 @@
 <h4 id="坑1" class="heading-element">
   <a href="#%e5%9d%911" class="heading-mark"></a>坑1</h4><p>因为us.avoscloud.com域名失效，如果不填写<code>serverURLs</code>，就会导致<code>net::ERR_CONNECTION_CLOSED</code>这个错误</p>
 <p>解决方法很简单，只需设置</p>
-<div class="highlight" id="id-7"><div class="chroma">
+<div class="highlight" id="id-6"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -574,7 +574,7 @@
 <li>等待DNS刷新，完成绑定</li>
 <li>将上面的<code>server_urls: </code>设置为绑定的域名</li>
 </ol>
-<div class="highlight" id="id-8"><div class="chroma">
+<div class="highlight" id="id-7"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
