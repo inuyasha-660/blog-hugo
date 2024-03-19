@@ -1,0 +1,40 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Hexo - 标签</title>
+    <link>https://blog.inuya.ltd/tags/hexo/</link>
+    <description>Hexo - 标签 | Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sun, 17 Sep 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/hexo/" rel="self" type="application/rss+xml" /><item>
+  <title>Next主题进阶配置</title>
+  <link>https://blog.inuya.ltd/posts/next/</link>
+  <pubDate>Sun, 17 Sep 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/next/</guid>
+  <description><![CDATA[<p>最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录</p>]]></description>
+</item>
+<item>
+  <title>hexo建立个人博客并部署到GitHub</title>
+  <link>https://blog.inuya.ltd/posts/hexo/</link>
+  <pubDate>Sat, 12 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/hexo/</guid>
+  <description><![CDATA[<h2 id="介绍" class="heading-element">
+  <a href="#%e4%bb%8b%e7%bb%8d" class="heading-mark"></a>介绍</h2><p>hexo是什么</p>
+<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<p>fluid是什么</p>
+<blockquote>
+<p>Fluid 是基于 Hexo 的一款 Material Design 风格的主题</p>
+</blockquote>]]></description>
+</item>
+<item>
+  <title>google/bing收录</title>
+  <link>https://blog.inuya.ltd/posts/google.bing/</link>
+  <pubDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/google.bing/</guid>
+  <description><![CDATA[<p>博客目前已被bing和google收录，bing的点击率比google要多，我们的<del>网站真是蒸蒸日上</del></p>]]></description>
+</item>
+</channel>
+</rss>
