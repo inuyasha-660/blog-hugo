@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>将你的博客部署到雨云</title><meta name="author" content="Inuyasha">
+<meta name="author-link" content="https://blog.inuya.ltd">
+<meta name="description" content="近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了
+这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天
+看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到
+每日一滚
+1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面
+Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起
+在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来
+1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示
+在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客
+https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了
+ssl证书 阿里云现有免费的一年ssl证书可以申请
+阿里云证书现只有三个月有效期，遂更换cerbot自动续费
+在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可" /><meta name="keywords" content='日常, Linux, nginx' /><meta itemprop="name" content="将你的博客部署到雨云">
+<meta itemprop="description" content="近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了
+这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天
+看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到
+每日一滚
+1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面
+Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起
+在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来
+1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示
+在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客
+https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了
+ssl证书 阿里云现有免费的一年ssl证书可以申请
+阿里云证书现只有三个月有效期，遂更换cerbot自动续费
+在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可"><meta itemprop="datePublished" content="2023-11-17T18:48:10+08:00" />
+<meta itemprop="dateModified" content="2023-11-17T18:48:10+08:00" />
+<meta itemprop="wordCount" content="291"><meta itemprop="image" content="https://blog.inuya.ltd/images/avator.jpg" />
+<meta itemprop="keywords" content="日常,Linux,nginx," /><meta property="og:title" content="将你的博客部署到雨云" />
+<meta property="og:description" content="近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了
+这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天
+看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到
+每日一滚
+1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面
+Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起
+在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来
+1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示
+在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客
+https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了
+ssl证书 阿里云现有免费的一年ssl证书可以申请
+阿里云证书现只有三个月有效期，遂更换cerbot自动续费
+在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.inuya.ltd/posts/winter/" /><meta property="og:image" content="https://blog.inuya.ltd/images/avator.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-17T18:48:10+08:00" />
+<meta property="article:modified_time" content="2023-11-17T18:48:10+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://blog.inuya.ltd/images/avator.jpg" /><meta name="twitter:title" content="将你的博客部署到雨云"/>
+<meta name="twitter:description" content="近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了
+这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天
+看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到
+每日一滚
+1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面
+Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起
+在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来
+1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示
+在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客
+https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了
+ssl证书 阿里云现有免费的一年ssl证书可以申请
+阿里云证书现只有三个月有效期，遂更换cerbot自动续费
+在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可"/>
+<meta name="application-name" content="Inuyasha&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Inuyasha&#39;s blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/avator.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.inuya.ltd/posts/winter/" /><link rel="prev" href="https://blog.inuya.ltd/posts/hugo/" /><link rel="next" href="https://blog.inuya.ltd/posts/arch-kde/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="s6Xbkqf3mpm1FicjHYqOSSn7sADgZFgRDjrletOl1A8" /><meta name="msvalidate.01" content="1B554B24299733A902739547C36CFC15" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "将你的博客部署到雨云",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.inuya.ltd\/posts\/winter\/"
+    },"genre": "posts","keywords": "日常, Linux, nginx","wordcount":  291 ,
+    "url": "https:\/\/blog.inuya.ltd\/posts\/winter\/","datePublished": "2023-11-17T18:48:10+08:00","dateModified": "2023-11-17T18:48:10+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Inuyasha"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Inuyasha&#39;s blog"><img loading="lazy" src="/images/molisha.png" alt="Inuyasha&#39;s blog" data-title="Inuyasha&#39;s blog" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Inuyasha&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-home fa-fw fa-sm" aria-hidden="true"></i> 主页</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/categories/"
+                          
+                          
+                        ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/tags/"
+                          
+                          
+                        ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
+                      </li></ul></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-group fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Inuyasha&#39;s blog"><img loading="lazy" src="/images/molisha.png" alt="Inuyasha&#39;s blog" data-title="Inuyasha&#39;s blog" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Inuyasha&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/"
+                  
+                  
+                ><i class="fa-solid fa-home fa-fw fa-sm" aria-hidden="true"></i> 主页</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/posts/"
+                    
+                    
+                  ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/categories/"
+                          
+                          
+                        ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/tags/"
+                          
+                          
+                        ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
+                      </li></ul></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-group fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">将你的博客部署到雨云</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>将你的博客部署到雨云</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://blog.inuya.ltd" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avator.jpg" alt="Inuyasha" data-title="Inuyasha" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Inuyasha</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category" title="分类 - 日常"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 日常</a></span></div><div class="post-meta-line"><span title="发布于 2023-11-17 18:48:10"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-17">2023-11-17</time></span>&nbsp;<span title="291 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="/posts/winter/" class="comment-visitors" data-flag-title="将你的博客部署到雨云">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="twikoo_visitors">-</span>&nbsp;次阅读
+            </span>&nbsp;<span id="/posts/winter/" class="comment-count" data-flag-title="将你的博客部署到雨云">
+              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span id="twikoo-comment-count">-</span>&nbsp;条评论
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#近况">近况</a></li>
+    <li><a href="#nginx">Nginx</a></li>
+    <li><a href="#https">https</a>
+      <ul>
+        <li><a href="#ssl证书">ssl证书</a></li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#重定向">重定向</a></li>
+      </ul>
+    </li>
+    <li><a href="#主页">主页</a></li>
+    <li><a href="#twikoo评论">Twikoo评论</a></li>
+    <li><a href="#nginx反向代理">Nginx反向代理</a></li>
+    <li><a href="#cdn">CDN</a></li>
+    <li><a href="#题外话">题外话</a>
+      <ul>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="近况" class="heading-element"><span>近况</span>
+  <a href="#%e8%bf%91%e5%86%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了</p>
+<p>这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天</p>
+<p>看了<a href="https://arch-linux.osrc.com/"target="_blank" rel="external nofollow noopener noreferrer">archlinux 简明指南</a>的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到</p>
+<p>每日一滚</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo pacman -Syu</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面</p>
+<h2 id="nginx" class="heading-element"><span>Nginx</span>
+  <a href="#nginx" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>原本想再水一篇，但想着也没什么好写的，就合并在一起</p>
+<p>在你喜欢的目录创建用于存放博客的文件夹，将博客仓库<strong>git</strong>下来</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    listen 80;
+</span></span><span class="line"><span class="cl">    server_name test.inuya.ltd;
+</span></span><span class="line"><span class="cl">    root /home/blog;
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>
+</div>
+</div><p>跟之前一样，在服务器<code>/etc/nginx/conf.d</code>目录下创建<code>test.inuya.ltd.conf</code>配置文件，写入以上内容，这里我用二级域名<code>test.inuya.ltd</code>演示</p>
+<p>在域名提供商添加<code>A类型</code>解析，填入你的IP，使用<code>http://test.inuya.ltd</code>即可访问博客</p>
+<h2 id="https" class="heading-element"><span>https</span>
+  <a href="#https" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了</p>
+<h3 id="ssl证书" class="heading-element"><span>ssl证书</span>
+  <a href="#ssl%e8%af%81%e4%b9%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><del>阿里云现有免费的一年ssl证书可以申请</del></p>
+<p>阿里云证书现只有三个月有效期，遂更换cerbot自动续费</p>
+<ol>
+<li>在你的debian或基于debian的发行版上安装snap</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt install snapd</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>安装cerbot snap包</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo snap install --classic certbot</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>准备 Certbot 命令</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo ln -s /snap </span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>获取证书，这里选择手动配置</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo certbot certonly --nginx</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>测试下自动续费</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo certbot renew --dry-run</span></span></code></pre></td></tr></table>
+</div>
+</div><p>证书应位于<code>/etc/letsencrypt/live</code>在Nginx中填入即可</p>
+<p>其他发行版也可参考<a href="https://certbot.eff.org/instructions?"target="_blank" rel="external nofollow noopener noreferrer">certbot instructions</a>，选择对应的发行版即可</p>
+<h3 id="配置" class="heading-element"><span>配置</span>
+  <a href="#%e9%85%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在原本的<code>test.inuya.ltd.conf</code>的配置中添加以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    listen 443 ssl;
+</span></span><span class="line"><span class="cl">    #配置HTTPS监听端口443。
+</span></span><span class="line"><span class="cl">    server_name test.inuya.ltd; #将test.inuya.ltd换成证书绑定的域名
+</span></span><span class="line"><span class="cl">    root html;
+</span></span><span class="line"><span class="cl">    index index.html index.htm;
+</span></span><span class="line"><span class="cl">    ssl_certificate cert/test.inuya.ltd.pem;  #将test.inuya.ltd.pem换成自己的证书
+</span></span><span class="line"><span class="cl">    ssl_certificate_key cert/test.inuya.ltd.key; #将test.inuya.ltd换成自己的证书密钥
+</span></span><span class="line"><span class="cl">    ssl_session_timeout 5m;
+</span></span><span class="line"><span class="cl">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+</span></span><span class="line"><span class="cl">    #表示使用的加密套件的类型。
+</span></span><span class="line"><span class="cl">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #表示使用的TLS协议的类型。
+</span></span><span class="line"><span class="cl">    ssl_prefer_server_ciphers on;
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">        root /home/blog;  #站点目录。
+</span></span><span class="line"><span class="cl">        index index.html index.htm;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用<code>systemctl restart nginx</code>重启Nginx，尝试带https访问网址</p>
+<h3 id="重定向" class="heading-element"><span>重定向</span>
+  <a href="#%e9%87%8d%e5%ae%9a%e5%90%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>如果想让所有的http访问都301重定向到https,可以在80端口的配置中添加一句<code>return 301 https://$server_name$request_uri;</code></p>
+<p>就像这样</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    listen 80;
+</span></span><span class="line"><span class="cl">    server_name test.inuya.ltd;
+</span></span><span class="line"><span class="cl">    return 301 https://$server_name$request_uri;
+</span></span><span class="line"><span class="cl">    root /home/blog;
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="主页" class="heading-element"><span>主页</span>
+  <a href="#%e4%b8%bb%e9%a1%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>域名只解析博客太浪费了，于是搭建了我的主页</p>
+<p>修改自<a href="https://github.com/noisky/Homepage"target="_blank" rel="external nofollow noopener noreferrer">饭饭&rsquo;s Homepage 2.0</a></p>
+<p>主页: <a href="https://inuya.ltd"target="_blank" rel="external nofollow noopener noreferrer">https://inuya.ltd</a></p>
+<h2 id="twikoo评论" class="heading-element"><span>Twikoo评论</span>
+  <a href="#twikoo%e8%af%84%e8%ae%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>都有服务器了，还用什么valine,早就听闻twikoo配置方便，今天一用，相见恨晚</p>
+<p>我是用的是docker部署，docker run时加上<code>--restart=always</code>设置自启</p>
+<p>部署完后访问<code>http://&lt;ip&gt;:8080</code>，返回值如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;Twikoo 云函数运行正常，请参考 https://twikoo.js.org/frontend.html 完成前端的配置&#34;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx反向代理" class="heading-element"><span>Nginx反向代理</span>
+  <a href="#nginx%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>因该是这么叫吧</p>
+<p>部署到服务器后，发现评论系统被拦截了，因为博客是https，但评论只有http,所以被拦截</p>
+<p>到域名服务商新建一条<code>A记录</code>解析，填入你的IP</p>
+<p>在<code>/etc/nginx/conf.d</code>新建配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    listen 80;
+</span></span><span class="line"><span class="cl">    server_name twikoo.inuya.ltd; # 设置的域名
+</span></span><span class="line"><span class="cl">    return 301 https://$server_name$request_uri; # 重定向至HTTPS
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">server {
+</span></span><span class="line"><span class="cl">    listen 443 ssl;
+</span></span><span class="line"><span class="cl">    server_name twikoo.inuya.ltd;
+</span></span><span class="line"><span class="cl">    ssl_certificate cert/twikoo.inuya.ltd.pem;  # 配置证书
+</span></span><span class="line"><span class="cl">    ssl_certificate_key cert/twikoo.inuya.ltd.key;
+</span></span><span class="line"><span class="cl">    ssl_session_timeout 5m;
+</span></span><span class="line"><span class="cl">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+</span></span><span class="line"><span class="cl">    # 表示使用的加密套件的类型。
+</span></span><span class="line"><span class="cl">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # 表示使用的TLS协议的类型。
+</span></span><span class="line"><span class="cl">    ssl_prefer_server_ciphers on;
+</span></span><span class="line"><span class="cl">    location / {
+</span></span><span class="line"><span class="cl">        proxy_pass  http://localhost:8080; # 反向代理至8080端口
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>systemctl restart nginx</code>重启Nginx，尝试使用域名访问</p>
+<h2 id="cdn" class="heading-element"><span>CDN</span>
+  <a href="#cdn" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>最近博客莫名延迟变高，甚至到了无法访问的地步，于是想着给博客套个CDN加速一下;正好雨云有免费的CDN可用</p>
+<p>在雨云创建一个新的CDN,如购买了雨云的产品(云服务器/虚拟主机)可以免费使用。</p>
+<p>创建完后复制生成的网址到域名注册商添加<code>CNAME</code>，这里为了方便直接使用<code>*.inuya.ltd</code>泛解析</p>
+<h2 id="题外话" class="heading-element"><span>题外话</span>
+  <a href="#%e9%a2%98%e5%a4%96%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>博客第一次有人主动申请友链，还是蛮激动的</p>
+<p>如果有急事可以用<code>inuya@foxmail.com</code>联系我，因为是腾讯的邮箱所以可以微信提醒，回复的比较及时</p>
+<h3 id="参考" class="heading-element"><span>参考</span>
+  <a href="#%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><a href="https://blog.csdn.net/qq_37960603/article/details/112371339"target="_blank" rel="external nofollow noopener noreferrer">Nginx：Nginx添加SSL实现HTTPS访问</a></li>
+<li><a href="https://blog.csdn.net/HD243608836/article/details/112861186"target="_blank" rel="external nofollow noopener noreferrer">nginx开启ssl并把http重定向到https的两种方式</a></li>
+<li><a href="https://blog.csdn.net/weixin_38312502/article/details/101780412"target="_blank" rel="external nofollow noopener noreferrer">nuxt.js项目部署到linux服务器，并使用域名访问</a></li>
+<li><a href="https://www.luxiyue.com/server/%e4%b8%aa%e4%ba%ba%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e9%83%a8%e7%bd%b2%e5%8d%9a%e5%ae%a2%e8%af%84%e8%ae%ba%e7%b3%bb%e7%bb%9f%ef%bc%9atwikoo/"target="_blank" rel="external nofollow noopener noreferrer">个人服务器上部署博客评论系统：Twikoo</a></li>
+<li><a href="https://blog.csdn.net/Hu_wen/article/details/110521804"target="_blank" rel="external nofollow noopener noreferrer">Docker 容器设置自启动</a></li>
+<li><a href="https://twikoo.js.org/"target="_blank" rel="external nofollow noopener noreferrer">Twikoo文档</a></li>
+<li><a href="https://certbot.eff.org/instructions?ws=nginx&amp;os=debianbuster"target="_blank" rel="external nofollow noopener noreferrer">Certbot 说明</a></li>
+</ul>
+</div><div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.jpg" alt="Inuyasha 支付宝" data-title="Inuyasha 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechat.png" alt="Inuyasha 微信" data-title="Inuyasha 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span>微信</span>
+          </div></div>
+  </div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-11-17 18:48:10">更新于 2023-11-17&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="https://blog.inuya.ltd/posts/winter/" data-title="将你的博客部署到雨云" data-hashtags="日常,Linux,nginx"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.inuya.ltd/posts/winter/" data-hashtag="日常"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.inuya.ltd/posts/winter/" data-title="将你的博客部署到雨云"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%97%A5%E5%B8%B8/" class="post-tag" title="标签 - 日常">日常</a><a href="/tags/linux/" class="post-tag" title="标签 - Linux">Linux</a><a href="/tags/nginx/" class="post-tag" title="标签 - nginx">nginx</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/hugo/" class="post-nav-item" rel="prev" title="博客迁移至hugo"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>博客迁移至hugo</a>
+      <a href="/posts/arch-kde/" class="post-nav-item" rel="next" title="Arch下的Kde配置">Arch下的Kde配置<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/" rel="external nofollow noopener noreferrer">Twikoo</a>.
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.8-RC">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://blog.inuya.ltd"target="_blank" rel="external nofollow noopener noreferrer">Inuyasha</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://icp.gov.moe/?keyword=20230439" target="_blank">萌ICP备20230439号</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/inuyasha-660/blog-hugo" title="博客仓库"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/twikoo/twikoo.all.min.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":20},"comment":{"enable":true,"expired":false,"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo.inuya.ltd","lang":"zh-cn"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"pangu":{"enable":true,"selector":"article"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.8-RC"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,50 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>图床 - 分类</title>
+    <link>https://blog.inuya.ltd/categories/%E5%9B%BE%E5%BA%8A/</link>
+    <description>图床 - 分类 | Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/%E5%9B%BE%E5%BA%8A/" rel="self" type="application/rss+xml" /><item>
+  <title>Frp自建内网穿透</title>
+  <link>https://blog.inuya.ltd/posts/nat-traversal/</link>
+  <pubDate>Mon, 22 Jan 2024 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/nat-traversal/</guid>
+  <description><![CDATA[这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
+想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
+frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
+网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
+安装&amp;使用 frp的安装很简单，参照文档的教程
+到Releases处下载适合的架构/系统的压缩包，解压到任意目录
+使用./frps -c ./frps.toml启动服务端
+使用./frpc -c ./frpc.toml启动客户端
+使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
+(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令
+1 2 3 4 5 6 7 8 9 10 # 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可]]></description>
+</item>
+<item>
+  <title>Icarus主题下的配置</title>
+  <link>https://blog.inuya.ltd/posts/upyun/</link>
+  <pubDate>Mon, 16 Oct 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/upyun/</guid>
+  <description><![CDATA[<h2 id="题外话" class="heading-element"><span>题外话</span>
+  <a href="#%e9%a2%98%e5%a4%96%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>久违地打开了VScode写起了文章，不得不说，用VScode来写MarkDown是真的方便，装个插件就可以预览了</p>
+<h2 id="icarus主题" class="heading-element"><span>Icarus主题</span>
+  <a href="#icarus%e4%b8%bb%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>回到正题</strong></p>
+<p>因为Keep老出问题，于是，在几天前，我将主题更换为BUtterfly，可配置的选项非常多，整体美观度也非常不错；看似一切都很完美，<del>那就没有这篇文章了</del></p>
+<p>可是有一个缺点，就是加载的速度太慢了，除了必要的头像等，已经尽力让网站不出现图片，但首次加载仍需2～5秒的时间，如果刚好网不好，那就至少得8秒以上了。</p>
+<blockquote>
+<p>其实早在几天前，我就开始申请又拍云联盟了，但因为网站访问时间太长，审核误认为无法访问给拒了</p>
+</blockquote>
+<p>办法当然有，最好的方法就是换主题，前一段时候用的next主题就不错，黑白色调，除了图片其他的都不用怎么加载</p>
+<p>于是我<del>又</del>换主题了，这次是有6K star的Icarus主题，整体看着也很不错，也没什么图片需要加载的</p>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>又拍云 - 标签</title>
+    <link>https://blog.inuya.ltd/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/</link>
+    <description>又拍云 - 标签 | Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Mon, 16 Oct 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/" rel="self" type="application/rss+xml" /><item>
+  <title>Icarus主题下的配置</title>
+  <link>https://blog.inuya.ltd/posts/upyun/</link>
+  <pubDate>Mon, 16 Oct 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/upyun/</guid>
+  <description><![CDATA[<h2 id="题外话" class="heading-element"><span>题外话</span>
+  <a href="#%e9%a2%98%e5%a4%96%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>久违地打开了VScode写起了文章，不得不说，用VScode来写MarkDown是真的方便，装个插件就可以预览了</p>
+<h2 id="icarus主题" class="heading-element"><span>Icarus主题</span>
+  <a href="#icarus%e4%b8%bb%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>回到正题</strong></p>
+<p>因为Keep老出问题，于是，在几天前，我将主题更换为BUtterfly，可配置的选项非常多，整体美观度也非常不错；看似一切都很完美，<del>那就没有这篇文章了</del></p>
+<p>可是有一个缺点，就是加载的速度太慢了，除了必要的头像等，已经尽力让网站不出现图片，但首次加载仍需2～5秒的时间，如果刚好网不好，那就至少得8秒以上了。</p>
+<blockquote>
+<p>其实早在几天前，我就开始申请又拍云联盟了，但因为网站访问时间太长，审核误认为无法访问给拒了</p>
+</blockquote>
+<p>办法当然有，最好的方法就是换主题，前一段时候用的next主题就不错，黑白色调，除了图片其他的都不用怎么加载</p>
+<p>于是我<del>又</del>换主题了，这次是有6K star的Icarus主题，整体看着也很不错，也没什么图片需要加载的</p>]]></description>
+</item>
+</channel>
+</rss>

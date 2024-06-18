@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>ipv6 - 标签</title>
+    <link>https://blog.inuya.ltd/tags/ipv6/</link>
+    <description>ipv6 - 标签 | Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/ipv6/" rel="self" type="application/rss+xml" /><item>
+  <title>家庭网络优化</title>
+  <link>https://blog.inuya.ltd/posts/ipv6/</link>
+  <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/ipv6/</guid>
+  <description><![CDATA[<h2 id="开启ipv6" class="heading-element"><span>开启IPV6</span>
+  <a href="#%e5%bc%80%e5%90%afipv6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>上一篇文章用开发板搭建了alist，mc服务器，但没有公网ip，只能局域网下访问，我当然不能忍，这篇文章讲述我如何获取公网ipv6和踩的一些坑</p>
+<h3 id="光猫配置" class="heading-element"><span>光猫配置</span>
+  <a href="#%e5%85%89%e7%8c%ab%e9%85%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>首先进入光猫的后台，我的猫是华为的老东西了，用普通的账号<code>root</code>密码<code>admin</code>进是能进去，但是很多设置只能看，改不了，于是我查遍bing，终于找到了适合我的超级管理员密码，大家可以试试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">账号:telecomadmin
+</span></span><span class="line"><span class="cl">密码:admintelecom</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入密码进入后台，找到<code>wan</code>设置，把路由器的wan改为<code>桥接</code>，并把<strong>ipv4</strong>改为<code>ipv4/ipv6</code>如果是灰色的不能更改，请按下面的步骤设置，以chrome为例</p>]]></description>
+</item>
+</channel>
+</rss>

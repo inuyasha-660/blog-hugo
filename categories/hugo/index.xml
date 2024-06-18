@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>hugo - 分类</title>
+    <link>https://blog.inuya.ltd/categories/hugo/</link>
+    <description>hugo - 分类 | Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Sun, 05 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/categories/hugo/" rel="self" type="application/rss+xml" /><item>
+  <title>博客迁移至hugo</title>
+  <link>https://blog.inuya.ltd/posts/hugo/</link>
+  <pubDate>Sun, 05 Nov 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/hugo/</guid>
+  <description><![CDATA[前几天，因为一个主题，我把博客从hexo换成hugo，也就是现在看到的
+迁移 hugo的操作比hexo要难，热门程度也不及hexo，所以遇到一些问题需要自己解决
+安装 用sudo apt install git安装git 到All releases找到Linux下载go 用以下命令提取下载的archive 1 rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz 编辑/etc/profile(系统范围安装)，添加环境变量 1 export PATH=$PATH:/usr/local/go/bin 完成后使用source /etc/profile即可完成安装
+使用sudo apt install snapd安装snap
+使用sudo snap install dart-sass安装dart-sass
+使用sudo snap install hugo安装hugo
+建站 三连快速创建
+1 2 3 hugo new site &lt;sitename&gt; cd &lt;sitename&gt; git init 这时候可以下载你喜欢的主题了，编辑hugo.toml，添加theme = &quot;themename&quot;指定主题
+基础 基础的指令和hexo差不多，不过原本的source变成了content，使用hexo server即可 如果提示由于本地 development 环境的限制， 评论系统 , CDN 和 fingerprint 不会在 development 环境下启用。，使用hugo server -e production更改环境即可]]></description>
+</item>
+</channel>
+</rss>

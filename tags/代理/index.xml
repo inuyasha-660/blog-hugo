@@ -1,0 +1,42 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>代理 - 标签</title>
+    <link>https://blog.inuya.ltd/tags/%E4%BB%A3%E7%90%86/</link>
+    <description>代理 - 标签 | Inuyasha&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>inuyasha-660@outlook.com (Inuyasha)</managingEditor>
+      <webMaster>inuyasha-660@outlook.com (Inuyasha)</webMaster><lastBuildDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blog.inuya.ltd/tags/%E4%BB%A3%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+  <title>Clash-For-Linux</title>
+  <link>https://blog.inuya.ltd/posts/clash/</link>
+  <pubDate>Fri, 11 Aug 2023 00:00:00 &#43;0000</pubDate>
+  <author>Inuyasha</author>
+  <guid>https://blog.inuya.ltd/posts/clash/</guid>
+  <description><![CDATA[<p>clash仓库已删除，如没有备份的可以在我的<a href="https://dl.inuya.ltd/d/%E9%98%BF%E9%87%8C%E4%BA%91/Linux/clash.tar.bz2"target="_blank" rel="external nofollow noopener noreferrer">alist上下载</a></p>
+<h2 id="下载clash" class="heading-element"><span>下载clash</span>
+  <a href="#%e4%b8%8b%e8%bd%bdclash" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>从Github下载<a href="https://github.com/DustinWin/clash-tools/tree/main/ClashPremium-release"target="_blank" rel="external nofollow noopener noreferrer">clash</a></p>
+<p>因为最新的c17没有arm64的版本，所以选用c16，下载好gz包，用以下命令解压</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gunzip clash-linux-arm64-vxxx.gz</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建文件夹" class="heading-element"><span>创建文件夹</span>
+  <a href="#%e5%88%9b%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>为clash创建一个文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p clash</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+</channel>
+</rss>
